@@ -41,34 +41,34 @@
     - os_security_kernel_enable_module_loading
   register: initramfs
 
-- name: Change sysctls
-  block:
-    - name: Create a combined sysctl-dict if overwrites are defined
-      set_fact:
-        sysctl_config: '{{ sysctl_config | combine(sysctl_overwrite) }}'
-      when: sysctl_overwrite | default()
+# - name: Change sysctls
+#   block:
+#     - name: Create a combined sysctl-dict if overwrites are defined
+#       set_fact:
+#         sysctl_config: '{{ sysctl_config | combine(sysctl_overwrite) }}'
+#       when: sysctl_overwrite | default()
 
-    - name: Change various sysctl-settings, look at the sysctl-vars file for documentation
-      sysctl:
-        name: '{{ item.key }}'
-        value: '{{ item.value }}'
-        sysctl_set: true
-        state: present
-        reload: true
-        ignoreerrors: true
-      with_dict: '{{ sysctl_config }}'
+#     - name: Change various sysctl-settings, look at the sysctl-vars file for documentation
+#       sysctl:
+#         name: '{{ item.key }}'
+#         value: '{{ item.value }}'
+#         sysctl_set: true
+#         state: present
+#         reload: true
+#         ignoreerrors: true
+#       with_dict: '{{ sysctl_config }}'
 
-    - name: Change various sysctl-settings on Amazon Linux, look at the sysctl-vars file for documentation
-      sysctl:
-        name: '{{ item.key }}'
-        value: '{{ item.value }}'
-        state: present
-        reload: true
-        ignoreerrors: true
-      with_dict: '{{ sysctl_rhel_config }}'
-      when: ansible_facts.distribution == 'Amazon'
+#     - name: Change various sysctl-settings on Amazon Linux, look at the sysctl-vars file for documentation
+#       sysctl:
+#         name: '{{ item.key }}'
+#         value: '{{ item.value }}'
+#         state: present
+#         reload: true
+#         ignoreerrors: true
+#       with_dict: '{{ sysctl_rhel_config }}'
+#       when: ansible_facts.distribution == 'Amazon'
 
-  when: ansible_virtualization_type not in ['docker', 'lxc', 'openvz']
+#   when: ansible_virtualization_type not in ['docker', 'lxc', 'openvz']
 
 - name: Apply ufw defaults
   template:
