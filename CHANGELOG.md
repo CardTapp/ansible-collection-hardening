@@ -1,5 +1,83 @@
 # Changelog
 
+## [Unreleased](https://github.com/dev-sec/ansible-collection-hardening/tree/HEAD)
+
+[Full Changelog](https://github.com/dev-sec/ansible-collection-hardening/compare/7.13.2...HEAD)
+
+**Implemented enhancements:**
+
+- Add option to set timeout in seconds to logout users [\#516](https://github.com/dev-sec/ansible-collection-hardening/pull/516) [[os_hardening](https://github.com/dev-sec/ansible-collection-hardening/labels/os_hardening)] ([lbayerlein](https://github.com/lbayerlein))
+- add feature to disable coredump to limit task [\#511](https://github.com/dev-sec/ansible-collection-hardening/pull/511) [[os_hardening](https://github.com/dev-sec/ansible-collection-hardening/labels/os_hardening)] ([lbayerlein](https://github.com/lbayerlein))
+- change hidepid mount task state to mounted [\#510](https://github.com/dev-sec/ansible-collection-hardening/pull/510) [[os_hardening](https://github.com/dev-sec/ansible-collection-hardening/labels/os_hardening)] ([alegrey91](https://github.com/alegrey91))
+- prettify nginx options [\#509](https://github.com/dev-sec/ansible-collection-hardening/pull/509) [[nginx_hardening](https://github.com/dev-sec/ansible-collection-hardening/labels/nginx_hardening)] ([schurzi](https://github.com/schurzi))
+- Update nginx\_add\_header README to match default [\#506](https://github.com/dev-sec/ansible-collection-hardening/pull/506) [[nginx_hardening](https://github.com/dev-sec/ansible-collection-hardening/labels/nginx_hardening)] ([duffn](https://github.com/duffn))
+- Updated dh\_params to 4096 [\#501](https://github.com/dev-sec/ansible-collection-hardening/pull/501) [[nginx_hardening](https://github.com/dev-sec/ansible-collection-hardening/labels/nginx_hardening)] ([ksaadDE](https://github.com/ksaadDE))
+
+**Fixed bugs:**
+
+- Duplication of sysctl default parameter fs.protected\_hardlinks and fs.protected\_symlinks [\#502](https://github.com/dev-sec/ansible-collection-hardening/issues/502)
+- Fix duplicate sysctl config in fs [\#505](https://github.com/dev-sec/ansible-collection-hardening/pull/505) [[os_hardening](https://github.com/dev-sec/ansible-collection-hardening/labels/os_hardening)] ([tekicat](https://github.com/tekicat))
+
+**Merged pull requests:**
+
+- Feature coredump [\#513](https://github.com/dev-sec/ansible-collection-hardening/pull/513) [[os_hardening](https://github.com/dev-sec/ansible-collection-hardening/labels/os_hardening)] ([rndmh3ro](https://github.com/rndmh3ro))
+
+## [7.13.2](https://github.com/dev-sec/ansible-collection-hardening/tree/7.13.2) (2021-11-23)
+
+[Full Changelog](https://github.com/dev-sec/ansible-collection-hardening/compare/7.13.1...7.13.2)
+
+## [7.13.1](https://github.com/dev-sec/ansible-collection-hardening/tree/7.13.1) (2021-11-23)
+
+[Full Changelog](https://github.com/dev-sec/ansible-collection-hardening/compare/7.13.0...7.13.1)
+
+**Closed issues:**
+
+- Unable to use 7.13.0 Release [\#503](https://github.com/dev-sec/ansible-collection-hardening/issues/503)
+
+## [7.13.0](https://github.com/dev-sec/ansible-collection-hardening/tree/7.13.0) (2021-11-15)
+
+[Full Changelog](https://github.com/dev-sec/ansible-collection-hardening/compare/7.12.0...7.13.0)
+
+**Implemented enhancements:**
+
+- os\_hardening: Provide a whitelist for yum repositories with non-signed RPMs [\#485](https://github.com/dev-sec/ansible-collection-hardening/issues/485)
+- Disable ctrl-alt-del key combination [\#496](https://github.com/dev-sec/ansible-collection-hardening/pull/496) [[os_hardening](https://github.com/dev-sec/ansible-collection-hardening/labels/os_hardening)] ([lbayerlein](https://github.com/lbayerlein))
+- implement sysctl-34 - link protection settings [\#494](https://github.com/dev-sec/ansible-collection-hardening/pull/494) [[os_hardening](https://github.com/dev-sec/ansible-collection-hardening/labels/os_hardening)] ([rndmh3ro](https://github.com/rndmh3ro))
+- Add whitelist option for yum repository files [\#487](https://github.com/dev-sec/ansible-collection-hardening/pull/487) [[os_hardening](https://github.com/dev-sec/ansible-collection-hardening/labels/os_hardening)] ([darxriggs](https://github.com/darxriggs))
+- Add TLSv1.3 to nginx default configuration [\#470](https://github.com/dev-sec/ansible-collection-hardening/pull/470) [[nginx_hardening](https://github.com/dev-sec/ansible-collection-hardening/labels/nginx_hardening)] ([ksaadDE](https://github.com/ksaadDE))
+
+**Closed issues:**
+
+- Please create the collection in ansible-galaxy [\#407](https://github.com/dev-sec/ansible-collection-hardening/issues/407)
+
+**Merged pull requests:**
+
+- Improve testing: install packages on Arch Linux [\#499](https://github.com/dev-sec/ansible-collection-hardening/pull/499) [[os_hardening](https://github.com/dev-sec/ansible-collection-hardening/labels/os_hardening)] [[ssh_hardening](https://github.com/dev-sec/ansible-collection-hardening/labels/ssh_hardening)] ([darxriggs](https://github.com/darxriggs))
+- add old role names to tags in Galaxy [\#495](https://github.com/dev-sec/ansible-collection-hardening/pull/495) ([schurzi](https://github.com/schurzi))
+- update minimum ansible version for roles [\#493](https://github.com/dev-sec/ansible-collection-hardening/pull/493) [[mysql_hardening](https://github.com/dev-sec/ansible-collection-hardening/labels/mysql_hardening)] [[os_hardening](https://github.com/dev-sec/ansible-collection-hardening/labels/os_hardening)] [[ssh_hardening](https://github.com/dev-sec/ansible-collection-hardening/labels/ssh_hardening)] [[nginx_hardening](https://github.com/dev-sec/ansible-collection-hardening/labels/nginx_hardening)] ([rndmh3ro](https://github.com/rndmh3ro))
+- revive old tests with custom ssh settings [\#491](https://github.com/dev-sec/ansible-collection-hardening/pull/491) ([rndmh3ro](https://github.com/rndmh3ro))
+
+## [7.12.0](https://github.com/dev-sec/ansible-collection-hardening/tree/7.12.0) (2021-10-21)
+
+[Full Changelog](https://github.com/dev-sec/ansible-collection-hardening/compare/7.11.0...7.12.0)
+
+**Implemented enhancements:**
+
+- feat\(os\_hardening\): extend file permission tasks to cover more files [\#489](https://github.com/dev-sec/ansible-collection-hardening/pull/489) [[os_hardening](https://github.com/dev-sec/ansible-collection-hardening/labels/os_hardening)] ([cmhe](https://github.com/cmhe))
+
+**Fixed bugs:**
+
+- mysql remove deprecated 'secure\_auth' parameter in mysql [\#346](https://github.com/dev-sec/ansible-collection-hardening/issues/346)
+- change baseline urls to full zip-url [\#490](https://github.com/dev-sec/ansible-collection-hardening/pull/490) [[mysql_hardening](https://github.com/dev-sec/ansible-collection-hardening/labels/mysql_hardening)] [[os_hardening](https://github.com/dev-sec/ansible-collection-hardening/labels/os_hardening)] [[ssh_hardening](https://github.com/dev-sec/ansible-collection-hardening/labels/ssh_hardening)] [[nginx_hardening](https://github.com/dev-sec/ansible-collection-hardening/labels/nginx_hardening)] ([rndmh3ro](https://github.com/rndmh3ro))
+- fix filter error in ansible.builtin.file mode parameter [\#486](https://github.com/dev-sec/ansible-collection-hardening/pull/486) [[ssh_hardening](https://github.com/dev-sec/ansible-collection-hardening/labels/ssh_hardening)] ([ssttehrani](https://github.com/ssttehrani))
+
+**Closed issues:**
+
+- Extend os\_hardening minimize\_access task to cover additional passwd/group/shadow/gshadow paths [\#488](https://github.com/dev-sec/ansible-collection-hardening/issues/488)
+- postgresql\_hardening role [\#484](https://github.com/dev-sec/ansible-collection-hardening/issues/484)
+- os\_hardening fails on "Create a combined sysctl-dict if overwrites are defined" task [\#482](https://github.com/dev-sec/ansible-collection-hardening/issues/482)
+- Improve changelog generation [\#381](https://github.com/dev-sec/ansible-collection-hardening/issues/381)
+
 ## [7.11.0](https://github.com/dev-sec/ansible-collection-hardening/tree/7.11.0) (2021-08-30)
 
 [Full Changelog](https://github.com/dev-sec/ansible-collection-hardening/compare/7.10.0...7.11.0)
