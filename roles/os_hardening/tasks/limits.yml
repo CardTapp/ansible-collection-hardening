@@ -45,7 +45,6 @@
       group: root
       mode: 0644
     when: ansible_service_mgr == "systemd"
-    notify: Reload systemd
 
   when: not os_security_kernel_enable_core_dump | bool
 
@@ -56,7 +55,6 @@
       path: /etc/systemd/coredump.conf.d
       state: absent
     when: ansible_service_mgr == "systemd"
-    notify: Reload systemd
 
   - name: Remove 10.hardcore.conf config file
     file:
